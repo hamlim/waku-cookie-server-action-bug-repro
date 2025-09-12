@@ -21,6 +21,9 @@ export default defineConfig({
     resolve: {
       alias: packageJson.imports,
     },
+    optimizeDeps: {
+      exclude: ["sqlite"],
+    },
     plugins: [
       mdx({
         remarkPlugins: [

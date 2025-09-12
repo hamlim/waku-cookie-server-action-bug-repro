@@ -1,4 +1,7 @@
 import type { Hono } from "hono";
+import { contextStorage, getContext } from "hono/context-storage";
+
+export { getContext };
 
 export default function honoEnhancer(createApp: (app: Hono) => Hono) {
   if (import.meta.env && !import.meta.env.PROD) {
@@ -13,6 +16,7 @@ export default function honoEnhancer(createApp: (app: Hono) => Hono) {
         }),
     );
     return (appToCreate: Hono) => {
+      appToCreate.use(contextStorage());
       let app = createApp(appToCreate);
       return {
         fetch: async (req: Request) => {
@@ -22,5 +26,8 @@ export default function honoEnhancer(createApp: (app: Hono) => Hono) {
       };
     };
   }
-  return createApp;
+  return (appToCreate: Hono) => {
+    appToCreate.use(contextStorage());
+    return createApp(appToCreate);
+  };
 }

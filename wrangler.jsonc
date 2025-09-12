@@ -1,5 +1,5 @@
 {
-  "name": "waku-template",
+  "name": "waku-cookie-server-action-bug",
   "compatibility_date": "2025-04-16",
   "compatibility_flags": ["nodejs_compat"],
   "main": "./dist/worker/serve-cloudflare.js",

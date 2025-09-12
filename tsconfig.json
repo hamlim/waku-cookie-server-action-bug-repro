@@ -13,7 +13,8 @@
     "jsx": "react-jsx",
     "paths": {
       "#/*": ["./src/*"],
-      "#/utils/*": ["./src/utils/*"]
+      "#/utils/*": ["./src/utils/*"],
+      "#/waku/*": ["./waku/*"]
     }
   }
 }

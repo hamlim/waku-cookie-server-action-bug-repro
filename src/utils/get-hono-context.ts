@@ -1,8 +1,8 @@
 import type { Context } from "hono";
-import { getHonoContext as wakuHonoCtx } from "waku/unstable_hono";
+import { getContext } from "#/waku/hono-enhancer";
 
 export function getHonoContext(): null | Context<{ Bindings: Env }> {
-  const ctx = wakuHonoCtx<{ Bindings: Env }>();
+  const ctx = getContext();
   if (!ctx) {
     return null;
   }
