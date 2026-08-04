@@ -17,7 +17,7 @@
     "hono": "4.12.25",
     "react": "19.1.1",
     "react-dom": "19.1.1",
-    "react-server-dom-webpack": "19.1.7",
+    "react-server-dom-webpack": "19.1.9",
     "waku": "0.26.1",
     "wrangler": "4.59.1"
   },
